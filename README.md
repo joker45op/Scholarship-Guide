@@ -13,10 +13,10 @@ This project was developed for the Hack the Spring hackathon and aims to provide
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Python, Flask
-- **Database**: MySQL
-- **Chatbot**: Python (using Natural Language Processing libraries)
+- **Frontend**: HTML, CSS, JavaScript, AJAX
+- **Backend**: Nodejs, Express
+- **Database**: MongoDb
+- **Chatbot**: VoiceFlow (integrated to website)
 
 ## Screenshots
 
