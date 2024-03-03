@@ -18,21 +18,6 @@ This project was developed for the Hack the Spring hackathon and aims to provide
 - **Database**: MySQL
 - **Chatbot**: Python (using Natural Language Processing libraries)
 
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/yourfeature`).
-3. Make your changes and commit them (`git commit -am 'Add some feature'`).
-4. Push to the branch (`git push origin feature/yourfeature`).
-5. Create a new Pull Request.
-
-## Credits
-
-This project was developed by [Your Name].
-Special thanks to the organizers of Hack the Spring hackathon for providing the opportunity to work on this project.
-
 ## Screenshots
 
 Here are some screenshots of the Scholarship Guide project:
