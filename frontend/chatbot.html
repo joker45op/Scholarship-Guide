@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+            .container{
+                width:500px;
+                height:600px;
+                border:2px solid grey;
+                justify-content: center;
+                align-items: center;
+                margin-left:500px;
+                border-radius:3px;
+            }
+
+        </style>
+ 
+    </head>
+    <body>
+        <div class="container" id="blank-state">
+        </div>
+        <script type="text/javascript">
+            (function(d, t) {
+                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                v.onload = function() {
+                  window.voiceflow.chat.load({
+                    verify: { projectID: '65dcbd7745e2c0b4b5489839' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production',
+                        render: {
+                            mode: 'embedded',
+                            target:
+                            document.getElementById('blank-state'),
+                        },
+                        autostart: false
+                    });
+                }
+                v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            })(document, 'script');
+          </script>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="SuccessViewScheme.css" />
+  </head>
+
+  <body>
+    <nav id="pageNavbar" class="navbar navbar-expand-lg navbar-light"></nav>
+
+    <body>
+      <div class="container">
+        <h2>About the Scheme</h2>
+        <br />
+        <h4>Post SSC Scholarship for Girls</h4>
+        <br />
+        <p>
+          This scheme provides scholarship to girls post their SSC to complete
+          their education till their graduation. The applicants should be under
+          the Socially and Economically Backward Classes and Nomadic Tribes and
+          Denotified Tribes
+        </p>
+        <br />
+        <h4>Eligibility Criteria:</h4>
+        <br />
+        <p>
+          The eligibility criteria for the post-SSC scholarship for girls may
+          vary depending on the specific scholarship program or organization
+          offering it. However, typical eligibility criteria might include:
+          <br /><br />
+          1) Applicant must be a female student who has completed her secondary
+          school certificate (SSC) examination.<br />
+          2) Usually, the scholarship is offered to students belonging to
+          economically disadvantaged backgrounds.<br />
+          3) Minimum academic performance requirements may apply, such as a
+          certain GPA or percentage in the SSC examination.<br />
+          4) The applicant may need to provide proof of financial need, such as
+          income certificates or other relevant documents.<br />
+          5) Some scholarships may have specific criteria related to the
+          applicant's field of study, community involvement, or leadership
+          abilities.
+        </p>
+        <br />
+        <h4>Benefits:</h4>
+        <br />
+        <p>
+          1. Group-A. Engineering, Medical & B.Sc. Rs. 280 per month (Hosteller)
+          & Rs. 125 per month (Day Scholar)<br />
+          2. Group-B. Diploma Course like Engineering, Technical Science & Post
+          Graduate Courses Rs. 190 per month (Hosteller) & Rs. 125 per month
+          (Day Scholar)<br />
+          3. Group-C. Engineering, Medicine, Technical Skill, Commerce and for
+          certificates of Post Graduate Courses Rs. 190 per month (Hosteller) &
+          Rs. 125 per month (Day Scholar)<br />
+          4. Group-D. Post Matric Course up to Graduation Rs. 175 per month
+          (Hosteller) & Rs. 90 per month (Day Scholar)<br />
+          5. Group-E. Std. 11 and Std.12 and up to Intermediate LevelRs. 115 per
+          month (Hosteller) & Rs. 65 per month (Day Scholar)<br />
+        </p>
+        <div class="col-12 custom-regbtn">
+          <button type="submit" class="btn btn-block custom-btn" id="LoginBtn">
+            Check if you are elgibile
+          </button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        &copy; 2024 Scholarship Guide. All rights reserved.
+      </footer>
+      <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+      <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </body>
+    <script>
+      $(document).ready(function () {
+        $("#LoginBtn").click(function () {
+          const token = localStorage.getItem("token");
+          $.ajax({
+            url: "http://localhost:3000/check-constraints",
+            type: "GET",
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+            success: function (data) {
+              console.log(data);
+              // Handle response based on eligibility
+              if (data === "Eligible") {
+                window.location.href = "Eligible.html"; // Redirect to Eligible.html
+              } else if (data === "Not Eligible") {
+                window.location.href = "NotEligible.html"; // Redirect to NotEligible.html
+              } else {
+                console.error("Unexpected response:", data);
+                alert("An error occurred while checking eligibility."); // More informative error message
+              }
+            },
+            error: function (xhr, status, error) {
+              console.error("Error:", error);
+              alert("There was a problem checking your eligibility."); // More informative error message
+            },
+          });
+        });
+
+        const queryString = window.location.search;
+
+        // Parse the URL parameters into an object
+        const urlParams = new URLSearchParams(queryString);
+
+        // Get the value of the 'scheme' parameter
+        const schemeNumber = urlParams.get("scheme");
+        // $.ajax({
+        //   url: "http://localhost:3000/schemes/" + schemeNumber,
+        //   type: "GET",
+        //   success: function (data) {
+        //     console.log(data);
+        //     // Handle response based on eligibility
+        //   },
+        //   error: function (xhr, status, error) {
+        //     console.error("Error:", error);
+        //     alert("There was a problem checking your eligibility."); // More informative error message
+        //   },
+        // });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("#pageNavbar").load("NavBar.html");
+        // AJAX request to fetch the scheme data
+        $.ajax({
+          url: "http://localhost:3000/schemes/65e1a1d12a7a4f0095fb152d", // Replace with your server URL and scheme ID
+          type: "GET",
+          success: function (data) {
+            // Display the fetched data in the frontend
+            displaySchemeData(data);
+          },
+          error: function (xhr, status, error) {
+            console.error("Error:", error);
+            $("#schemeData").html("Error fetching data");
+          },
+        });
+
+        // Function to display the scheme data in the frontend
+        function displaySchemeData(data) {
+          $("#schemeData").html(`
+                <h2>${data.schemeName}</h2>
+                <p><strong>Description:</strong> ${data.schemeDescription}</p>
+                <p><strong>Category:</strong> ${data.schemeCategory}</p>
+                <h3>Eligibility Criteria:</h3>
+                <ul>
+                    ${data.eligibilityCriteria
+                      .map((criteria) => `<li>${criteria}</li>`)
+                      .join("")}
+                </ul>
+                <h3>Documents Required:</h3>
+                <ul>
+                    ${data.documentsRequired
+                      .map((document) => `<li>${document}</li>`)
+                      .join("")}
+                </ul>
+                <h3>Benefits:</h3>
+                <ul>
+                    ${data.benefits
+                      .map((benefit) => `<li>${benefit}</li>`)
+                      .join("")}
+                </ul>
+                <h3>Steps for Applying:</h3>
+                <ol>
+                    ${data.stepsForApplying
+                      .map((step) => `<li>${step}</li>`)
+                      .join("")}
+                </ol>
+            `);
+        }
+      });
+    </script>
+  </body>
+</html>

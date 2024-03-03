@@ -1,0 +1,36 @@
+<style>
+  #chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  #chatbot-icon {
+    display: block;
+    width: 50px; /* Adjust the size as needed */
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff; /* Change the background color */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  #chatbot-icon img {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<div id="chatbot-container">
+  <a href="Chatbot.html" id="chatbot-icon" onclick="openChatbotPage()">
+    <img src="chatbot-icon.png" alt="Chatbot Icon" />
+  </a>
+</div>
+
+<script src="script.js"></script>
+<!-- Link to your JavaScript file -->
+<script>
+  function openChatbotPage() {
+    window.open("chatbot.html", "_blank"); // Replace 'chatbot-page.html' with the actual page URL
+  }
+</script>

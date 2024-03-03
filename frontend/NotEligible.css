@@ -1,0 +1,204 @@
+.navbar {
+    background-color: #112c66;
+    width: 100%;
+
+}
+
+.navbar-nav {
+    color: white;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white;
+    font-size: .6cm;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #22438c;
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #112c66;
+    color: white;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #22438c;
+    color: white;
+}
+
+.btn-outline-custom {
+
+    font-weight: 600;
+    color: #112c66;
+    /* Text color */
+    background-color: rgb(255, 209, 3);
+    /* Custom background color */
+    /* border-color: #007bff; Border color */
+}
+
+footer {
+    background-color: #112c66;
+    color: white;
+    padding: 10px;
+    margin-top: 80px;
+    width: 100%;
+    text-align: center;
+}
+
+.custom-col-md-6 {
+    padding-top: 0px;
+}
+
+.custom-card {
+    border-radius: 7%;
+    border-color: #112c66;
+    border-width: 2px;
+}
+
+.custom-btn {
+    background-color: #112c66;
+    border-color: #112c66;
+    padding: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.collapsible {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: #333;
+    /* Text color for the button */
+    border: none;
+    border-bottom: 1px solid #ccc;
+    /* Border below the button */
+}
+
+.arrow {
+    margin-left: 8px;
+    /* Add space between text and arrow */
+    transition: transform 0.3s ease;
+}
+
+.arrow.down {
+    transform: rotate(180deg);
+}
+
+.container h2 {
+    color: #22438c;
+}
+
+.container {
+    padding: 50px;
+    box-shadow: 2px 5px 5px 2px grey;
+    transition: 2s;
+
+}
+
+.content {
+    display: none;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.collapsible {
+    color: white;
+    font-size: .6cm;
+    background-color: #22438c;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.collapsible:hover {
+    background-color: rgb(255, 209, 3);
+    color: #22438c;
+
+}
+
+.custom-btn:hover {
+    background-color: rgb(255, 209, 3);
+    border-color: rgb(255, 209, 3);
+    color: #112c66;
+    padding: 13px;
+    text-decoration: none;
+}
+
+.custom-form-group label {
+    color: #112c66;
+    font-weight: bold;
+}
+
+.custom-card-body {
+
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.custom-btn {
+    background-color: #112c66;
+    border-color: #112c66;
+    color: #f5f5f5;
+    padding: 10px;
+    width: 250px;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+.custom-btn:hover {
+    background-color: rgb(255, 209, 3);
+    border-color: #ffd103;
+    color: #112c66;
+    /* padding: 13px; */
+    outline: none;
+    text-decoration: none;
+}
+
+.custom-regbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sad {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    COLOR: #112C66;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
+}

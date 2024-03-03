@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Eligible.css">
+</head>
+
+<body>
+    <nav id="pageNavbar" class="navbar navbar-expand-lg navbar-light"></nav>
+    <body>
+        <div class="happy">
+            <img src="happy.png" height="350px" width="400px" style="margin-top: 20px;margin-bottom: 20px;"><br>
+            <h2> Yayy!</h2><br>
+            <h5>You Are Eligible For</h5><br>
+            <h3 id="user_name">Scholarship Name</h3>
+        </div>
+        </div>
+        <div style="margin: 40px;">
+            <h4> Documents Required</h4>
+            <br>1) Proof of Income
+            <br>2) Proof of caste
+            <br>3) Proof of Education
+            <br>4) Proof of Identity
+            </p>
+        </div>
+        <br>
+        <br>
+        <div style="margin: 40px;">
+            <h4> Steps to apply</h4> <br>
+            <p>
+                1. The application process for this scheme is online.<br>
+                2. Go to the Digital Gujarat Portal and register on it.<br>
+                3. Select this scheme on the portal and the online application form will appear.<br>
+                4. You can also download the hard copy of the form from there, fill it up, attach the documents and
+                submit it to the OBC welfare department.<br>
+                5. Fill all the rows and columns of the online form and upload all the documents.<br>
+                6. Click on 'Submit'.<br>
+                7. The selected applications will be forwarded to your school, and you will receive the benefit
+                amount directly on your bank account.<br>
+            </p>
+        </div>
+
+        <div class="col-12 custom-regbtn">
+            <a href="Home.html"><button type="submit" class="btn btn-block custom-btn" id="LoginBtn">Go To Home</button></a>
+        </div>
+
+        <footer class="footer">
+            &copy; 2024 Scholarship Guide. All rights reserved.
+        </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </body>
+<script>
+    const token = localStorage.getItem("token");
+   $.ajax({
+            url: "http://localhost:3000/check-constraints",
+            type: "GET",
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+        success: function (data) {
+            console.log(data)
+            $("#user_name").empty();
+        },
+        error: function (xhr, status, error) {
+            console.error(status, error); // Log any errors
+        }
+    });
+    $(document).ready(function(){
+
+        $("#pageNavbar").load("NavBar.html");
+    })
+
+</script>
+ 
+</html>

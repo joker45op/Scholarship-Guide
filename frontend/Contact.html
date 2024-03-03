@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="Contact.css" />
+  </head>
+
+  <body>
+    <nav id="pageNavbar" class="navbar navbar-expand-lg navbar-light"></nav>
+    <div style="display: flex; margin: 70px">
+      <div style="width: 70%">
+        <h1 class="form-heading col-12 custom-education-details">Contact us</h1>
+        <div class="col-md-10" style="padding: 20px; padding-left: 50px">
+          <input
+            type="text"
+            class="form-control"
+            id="inputName"
+            placeholder="Name"
+          />
+        </div>
+        <div class="col-md-10" style="padding: 20px; padding-left: 50px">
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail"
+            placeholder="Email"
+          />
+        </div>
+        <div class="col-md-10" style="padding: 20px; padding-left: 50px">
+          <input
+            type="text"
+            class="form-control"
+            id="inputMessage"
+            placeholder="Message"
+          />
+        </div>
+        <div class="col-12 custom-regbtn">
+          <button type="submit" class="btn btn-block custom-btn">Send</button>
+        </div>
+      </div>
+      <div style="width: 50%">
+        <img src="4849052.webp" alt="" />
+      </div>
+    </div>
+    <footer class="footer">
+      &copy; 2024 Scholarship Guide. All rights reserved.
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+      try {
+        $(document).ready(async function () {
+          // Load navbar
+          $("#pageNavbar").load("NavBar.html");
+        });
+      } catch (e) {}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Admin.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Home.html">
+                &nbsp;&nbsp;&nbsp;<img src="hlexander (1).png" width="60" height="60" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav justify-content-center"> <!-- Add justify-content-center -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> &nbsp;&nbsp;Home &nbsp;&nbsp; </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            &nbsp;&nbsp;Government Scheme &nbsp;&nbsp;
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Education.html">Education</a>
+                            <a class="dropdown-item" href="Pansion.html">Pension</a>
+                            <a class="dropdown-item" href="Health.html">Health care</a>
+                            <a class="dropdown-item" href="Housing.html">Housing</a>
+                            <a class="dropdown-item" href="Agriculture.HTML">Agriculture</a>
+                            <a class="dropdown-item" href="Finance.html">Financial schemes</a>
+                            <a class="dropdown-item" href="Business.html">Business</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"> &nbsp;&nbsp;Contact Us &nbsp;&nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html"> &nbsp;&nbsp;FAQ'S &nbsp;&nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login.html">&nbsp;&nbsp;Login &nbsp;&nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Register.html"> &nbsp;&nbsp;Register &nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html"> &nbsp;&nbsp;Profile
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li>
+                        <form class="form-inline custom-form">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-custom my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="formcontainer custom-formcontainer">
+        <div class="formchildcontainer">
+            <form class="row g-3 customform" style="display: flex;justify-content: center;align-items: center;">
+                <h2 class="form-heading col-12 custom-personal-details">Scheme Details</h2>
+                <div class="col-md-11" style="padding: 10px;">
+                    <input type="text" class="form-control" id="inputSchemeName" placeholder="Scheme Name">
+                </div>
+                <div class="col-md-11" style="padding: 10px;">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Scheme Category">
+                </div>
+                <div class="col-md-11" style="padding: 10px;">
+                    <textarea type="text" class="form-control" id="inputSchemeDescription" placeholder="Scheme Description"></textarea>
+                </div>
+                <div class="col-md-12" style="display: flex;justify-content: center;align-items: center;">
+                    <div class="col-md-10">
+                        <h5 class="form-heading custom-steps-details">Eligibility Criteria
+                        </h5>
+                    </div>
+                    <div class="col-md-2" style="display: flex;justify-content: center;align-items: center;">
+                        <button type="button" class="btn mt-2 custom-add-btn" onclick="addEligibility()">+</button>
+                        <button type="button" class="btn mt-2 custom-del-btn" onclick="deleteEligibility()">- </button>
+                    </div>
+                </div>
+        <!-- <form class="row g-3" id="stepsForm"> -->
+        <div class="col-md-12" style="padding: 10px;">
+            <div id="eligibilityContainer">
+            </div>
+        </div>
+        <div class="col-md-12" style="display: flex;justify-content: center;align-items: center;">
+            <div class="col-md-10">
+                <h5 class="form-heading custom-steps-details">Documents Required
+                </h5>
+            </div>
+            <div class="col-md-2" style="display: flex;justify-content: center;align-items: center;">
+                <button type="button" class="btn    
+                        mt-2 custom-add-btn" onclick="addDocument()">+</button>
+                <button type="button" class="btn mt-2 custom-del-btn" onclick="deleteDocument()">- </button>
+            </div>
+        </div>
+        <!-- <form class="row g-3" id="stepsForm"> -->
+        <div class="col-md-12" style="padding: 10px;">
+            <div id="documentContainer">
+            </div>
+        </div>
+        <div class="col-md-12" style="display: flex;justify-content: center;align-items: center;">
+            <div class="col-md-10">
+                <h5 class="form-heading custom-steps-details">Benefits</h5>
+            </div>
+            <div class="col-md-2" style="display: flex;justify-content: center;align-items: center;">
+                <button type="button" class="btn mt-2 custom-add-btn" onclick="addBenefit()">+</button>
+                <button type="button" class="btn mt-2 custom-del-btn" onclick="deleteBenefit()">-</button>
+            </div>
+        </div>
+        <!-- <form class="row g-3" id="stepsForm"> -->
+        <div class="col-md-12" style="padding: 10px;">
+            <div id="benefitContainer">
+            </div>
+        </div>
+
+        <div class="col-md-12" style="display: flex;justify-content: center;align-items: center;">
+            <div class="col-md-10">
+                <h5 class="form-heading custom-steps-details">Steps for applying</h5>
+            </div>
+            <div class="col-md-2" style="display: flex;justify-content: center;align-items: center;">
+                <button type="button" class="btn mt-2 custom-add-btn" onclick="addStep()">+</button>
+                <button type="button" class="btn mt-2 custom-del-btn" onclick="deleteStep()">-
+                </button>
+            </div>
+        </div>
+        <!-- <form class="row g-3" id="stepsForm"> -->
+        <div class="col-md-12" style="padding: 10px;">
+            <div id="stepsContainer">
+            </div>
+        </div>
+        <div class="col-12 custom-regbtn">
+            <button type="submit" id="addBtn" class="btn btn-block custom-btn">Add Details</button>
+        </div>
+        </form>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+    <footer class="footer">
+        &copy; 2024 Scholarship Guide. All rights reserved.
+    </footer>
+    <script>
+        // Function to resize textarea
+        function autoResizeTextarea() {
+            const textarea = document.querySelector('.auto-growing-textarea');
+            textarea.style.height = 'auto'; // Reset height to auto
+            textarea.style.height = textarea.scrollHeight + 'px'; // Set the height to the scrollHeight
+        }
+
+        // Trigger autoResizeTextarea on input
+        document.querySelector('.auto-growing-textarea').addEventListener('input', autoResizeTextarea);
+
+        // Initial call to resize textarea on page load
+        window.addEventListener('load', autoResizeTextarea);
+    </script>
+    <script>
+        function addStep() {
+            var stepNumber = $("#stepsContainer").children().length + 1;
+            var stepHtml = `
+            <center>
+            <div class="col-md-11 step">
+              <textarea class="form-control auto-growing-textarea" id="step${stepNumber}" name="step${stepNumber}" oninput="autoResizeTextarea(this)" placeholder="Step ${stepNumber}" style="margin-top:20px;"></textarea>
+            </div>
+            </center>`;
+            $("#stepsContainer").append(stepHtml);
+        }
+
+        function deleteStep() {
+            var steps = $("#stepsContainer").children();
+            if (steps.length > 0) {
+                steps.last().remove();
+            }
+        }
+
+        function addEligibility() {
+            var eligibilityNumber = $("#eligibilityContainer").children().length + 1;
+            var eligibilityHtml = `
+          
+            <center>
+            <div class="col-md-11 eligibility">
+              <textarea class="form-control auto-growing-textarea" id="eligibility${eligibilityNumber}" placeholder="Eligibility ${eligibilityNumber}" name="eligibility${eligibilityNumber} oninput="autoResizeTextarea(this)" style="margin-top:20px;"></textarea>
+            </div>
+            </center>`;
+            $("#eligibilityContainer").append(eligibilityHtml);
+        }
+
+        function deleteEligibility() {
+            var eligibility = $("#eligibilityContainer").children();
+            if (eligibility.length > 0) {
+                eligibility.last().remove();
+            }
+        }
+
+
+        function addDocument() {
+            var docNumber = $("#documentContainer").children().length + 1;
+            var docHtml = `
+            <center>
+            <div class="col-md-11 document">
+              <textarea class="form-control auto-growing-textarea" id="document${docNumber}" name="document${docNumber}" oninput="autoResizeTextarea(this)" placeholder="Document ${docNumber}" style="margin-top:20px;"></textarea>
+            </div>
+            </center>`;
+            $("#documentContainer").append(docHtml);
+        }
+
+        function deleteDocument() {
+            var docs = $("#documentContainer").children();
+            if (docs.length > 0) {
+                docs.last().remove();
+            }
+        }
+
+        function addBenefit() {
+            var benefitNumber = $("#benefitContainer").children().length + 1;
+            var benefitHtml = `
+            <center>
+            <div class="col-md-11 benefit">
+              <textarea class="form-control auto-growing-textarea" id="benefit${benefitNumber}" name="beneift${benefitNumber}" oninput="autoResizeTextarea(this)" placeholder="Benefit ${benefitNumber}" style="margin-top:20px;"></textarea>
+            </div>
+            </center>`;
+            $("#benefitContainer").append(benefitHtml);
+        }
+
+        function deleteBenefit() {
+            var benefits = $("#benefitContainer").children();
+            if (benefits.length > 0) {
+                benefits.last().remove();
+            }
+        }
+        function autoResizeTextarea(textarea) {
+            textarea.style.height = 'auto'; // Reset height to auto
+            textarea.style.height = textarea.scrollHeight + 'px'; // Set the height to the scrollHeight
+        }
+
+        // Initial call to resize textarea on page load
+        document.querySelectorAll('.auto-growing-textarea').forEach(textarea => autoResizeTextarea(textarea));
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('')
+        })
+    </script>
+
+</body>
+
+</html>

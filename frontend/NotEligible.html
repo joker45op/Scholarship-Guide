@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./NotEligible.css" />
+  </head>
+
+  <body>
+    <nav id="pageNavbar" class="navbar navbar-expand-lg navbar-light"></nav>
+
+    <div class="sad">
+      <img
+        src="sad (2).png"
+        height="340px"
+        width="400px"
+        style="margin-top: 50px; margin-bottom: 50px"
+      /><br />
+      <h2>Sorry</h2>
+      <br />
+      <h5>You Are Not Eligible For</h5>
+      <br />
+      <h3 id="user_name">Scholarship Name</h3>
+    </div>
+
+    <div class="col-12 custom-regbtn">
+      <a href="Education.html"
+        ><button type="submit" class="btn btn-block custom-btn" id="LoginBtn">
+          Explore Other Schemes
+        </button></a
+      >
+    </div>
+    <div class="col-12 custom-regbtn">
+      <a href="Home.html"
+        ><button type="submit" class="btn btn-block custom-btn" id="LoginBtn">
+          Go To Home
+        </button></a
+      >
+    </div>
+
+    <footer class="footer">
+      &copy; 2024 Scholarship Guide. All rights reserved.
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+  <script>
+    const token = localStorage.getItem("token");
+    $.ajax({
+      url: "http://localhost:3000/check-constraints",
+      type: "GET",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+      success: function (data) {
+        console.log(data);
+        $("#user_name").empty();
+      },
+      error: function (xhr, status, error) {
+        console.error(status, error); // Log any errors
+      },
+    });
+    $(document).ready(function () {
+      $("#pageNavbar").load("NavBar.html");
+    });
+  </script>
+</html>
